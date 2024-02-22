@@ -30,6 +30,7 @@ func BurnDown(resources []parser.TerraformResource) string {
 		},
 	})
 	tableWriter.AppendHeader(table.Row{"Resource name", "No. of resources"})
+	tableWriter.SetAutoIndex(true)
 	for key, value := range groupedBurnDownList {
 		tableWriter.AppendRow(table.Row{key, value})
 	}

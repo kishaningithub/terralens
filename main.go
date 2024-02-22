@@ -31,7 +31,8 @@ terraform show -json | tf-state-viz
 			return nil
 		},
 	}
-	rootCmd.Flags().StringVarP(&viewType, "type", "t", tfstateviz.ViewTypeBurnDownList, fmt.Sprintf("must be one of %q", tfstateviz.ViewTypeBurnDownList))
+	usage := fmt.Sprintf("must be one of %q %q", tfstateviz.ViewTypeBurnDownList, tfstateviz.ViewTypeBurnDownListDetailed)
+	rootCmd.Flags().StringVarP(&viewType, "type", "t", tfstateviz.ViewTypeBurnDownList, usage)
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Println(err)
 		os.Exit(1)

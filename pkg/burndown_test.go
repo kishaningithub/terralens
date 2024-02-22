@@ -56,12 +56,12 @@ func TestBurnDown(t *testing.T) {
 				},
 			},
 			want: strings.TrimSpace(`
-| Resource name | No. of resources |
-| --- | ---:|
-| module.test_mwaa | 4 |
-| aws_glue_catalog_database | 2 |
-| aws_iam_policy | 1 |
-| module.vpc | 1 |
+| | Resource name | No. of resources |
+| ---:| --- | ---:|
+| 1 | module.test_mwaa | 4 |
+| 2 | aws_glue_catalog_database | 2 |
+| 3 | aws_iam_policy | 1 |
+| 4 | module.vpc | 1 |
 `),
 		},
 	}
