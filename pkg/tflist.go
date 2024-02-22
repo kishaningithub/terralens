@@ -1,7 +1,7 @@
 package tfstateviz
 
 import (
-	"github.com/kishaningithub/tf-state-viz/pkg/internal/parser"
+	"github.com/kishaningithub/tf-state-viz/pkg/parser"
 	"io"
 )
 

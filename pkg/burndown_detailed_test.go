@@ -2,7 +2,7 @@ package tfstateviz_test
 
 import (
 	tfstateviz "github.com/kishaningithub/tf-state-viz/pkg"
-	"github.com/kishaningithub/tf-state-viz/pkg/internal/parser"
+	"github.com/kishaningithub/tf-state-viz/pkg/parser"
 	"github.com/stretchr/testify/require"
 	"strings"
 	"testing"

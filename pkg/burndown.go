@@ -2,7 +2,7 @@ package tfstateviz
 
 import (
 	"github.com/jedib0t/go-pretty/v6/table"
-	"github.com/kishaningithub/tf-state-viz/pkg/internal/parser"
+	"github.com/kishaningithub/tf-state-viz/pkg/parser"
 	"strings"
 )
 
