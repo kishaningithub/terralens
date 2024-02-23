@@ -8,6 +8,7 @@ See your Terraform state world with clarity and precision - TerraLens, your visu
 
 ## Documentation
 
+https://kishaningithub.github.io/terralens/
 
 ## Contributing
 
