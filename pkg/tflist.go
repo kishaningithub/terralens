@@ -1,7 +1,7 @@
 package tfstateviz
 
 import (
-	"github.com/kishaningithub/tf-state-viz/pkg/parser"
+	"github.com/kishaningithub/terralens/pkg/parser"
 	"io"
 )
 

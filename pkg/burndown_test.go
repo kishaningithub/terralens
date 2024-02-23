@@ -1,8 +1,8 @@
 package tfstateviz_test
 
 import (
-	tfstateviz "github.com/kishaningithub/tf-state-viz/pkg"
-	"github.com/kishaningithub/tf-state-viz/pkg/parser"
+	tfstateviz "github.com/kishaningithub/terralens/pkg"
+	"github.com/kishaningithub/terralens/pkg/parser"
 	"github.com/stretchr/testify/require"
 	"strings"
 	"testing"

@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	tfstateviz "github.com/kishaningithub/tf-state-viz/pkg"
+	tfstateviz "github.com/kishaningithub/terralens/pkg"
 	"github.com/spf13/cobra"
 	"os"
 )
@@ -12,15 +12,15 @@ var Version = "dev"
 func main() {
 	var viewType string
 	var rootCmd = &cobra.Command{
-		Use:     "tf-state-viz [flags] address",
+		Use:     "terralens [flags]",
 		Short:   "Visualize your terraform state in all sorts of ways",
 		Version: Version,
 		Example: `
 ## Show burn down list
-terraform show -json | tf-state-viz --type burndownlist
+terraform show -json | terralens --type burndownlist
 
 ## Show default view (currently burndownlist)
-terraform show -json | tf-state-viz
+terraform show -json | terralens
 `,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			view, err := tfstateviz.ShowView(os.Stdin, viewType)

@@ -1,4 +1,4 @@
-project_name: tf-import-gen
+project_name: terralens
 
 before:
   hooks:
@@ -6,7 +6,7 @@ before:
 
 builds:
   - main: .
-    binary: tf-import-gen
+    binary: terralens
     ldflags:
       - -X main.Version={{.Version}}
     goos:
@@ -24,15 +24,15 @@ brews:
       owner: kishaningithub
       name: homebrew-tap
     folder: Formula
-    homepage: https://github.com/kishaningithub/tf-import-gen
-    description: Tool to generate terraform import statements to simplify state migrations from one terraform code base to another
+    homepage: https://github.com/kishaningithub/terralens
+    description: See your Terraform state world with clarity and precision - TerraLens, your visual command center for infrastructure insight!
     license: MIT
 
 nfpms:
-  - id: tf-import-gen
-    package_name: tf-import-gen
-    homepage: https://github.com/kishaningithub/tf-import-gen
-    description: Tool to generate terraform import statements to simplify state migrations from one terraform code base to another
+  - id: terralens
+    package_name: terralens
+    homepage: https://github.com/kishaningithub/terralens
+    description: See your Terraform state world with clarity and precision - TerraLens, your visual command center for infrastructure insight!
     maintainer: Kishan B <kishancs46@gmail.com>
     license: MIT
     formats:
@@ -43,7 +43,7 @@ nfpms:
 kos:
   - main: .
     base_image: alpine
-    repository: ghcr.io/kishaningithub/tf-import-gen
+    repository: ghcr.io/kishaningithub/terralens
     platforms:
       - linux/amd64
       - linux/arm64

@@ -1,4 +1,4 @@
-module github.com/kishaningithub/tf-state-viz
+module github.com/kishaningithub/terralens
 
 go 1.22
 
