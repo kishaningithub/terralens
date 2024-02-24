@@ -1,5 +1,6 @@
 site_name: Terralens
 repo_url: https://github.com/kishaningithub/terralens
+site_url: https://kishaningithub.github.io/terralens
 nav:
   - index.md
   - installation.md
@@ -16,6 +17,7 @@ markdown_extensions:
 theme:
   name: material
   features:
+    - navigation.instant
     - navigation.expand
     - content.code.copy
   palette:
