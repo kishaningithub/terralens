@@ -12,20 +12,20 @@ import (
 var Version = "dev"
 
 func main() {
-	var viewType string
+	var displayType string
 	var rootCmd = &cobra.Command{
 		Use:     "terralens [flags]",
 		Short:   "See your Terraform state world with clarity and precision - TerraLens, your visual command center for infrastructure insight!",
 		Version: Version,
 		Example: `
-## Show burn down list
-terraform show -json | terralens --type burn_down_list_detailed
-
-## Show default view (currently burn_down_list)
+## Default usage (shows burn_down_list)
 terraform show -json | terralens
+
+## Show detailed burn down list
+terraform show -json | terralens --display burn_down_list_detailed
 `,
 		RunE: func(cmd *cobra.Command, args []string) error {
-			renderedView, err := tfstateviz.ShowView(os.Stdin, viewType)
+			renderedView, err := tfstateviz.ShowView(os.Stdin, displayType)
 			if err != nil {
 				return err
 			}
@@ -34,7 +34,7 @@ terraform show -json | terralens
 		},
 	}
 	usage := fmt.Sprintf("must be one of %s", strings.Join(view.SupportedViewTypes(), ","))
-	rootCmd.Flags().StringVarP(&viewType, "type", "t", view.BurnDownList, usage)
+	rootCmd.Flags().StringVarP(&displayType, "display", "d", view.BurnDownList, usage)
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Println(err)
 		os.Exit(1)
