@@ -56,7 +56,7 @@ func TestBurnDownDetailedView(t *testing.T) {
 				},
 			},
 			want: strings.TrimSpace(`
-| | Module | Resource type | Count |
+| | Module | Resource type | No. of resources |
 | ---:| --- | --- | ---:|
 | 1 | root | aws_glue_catalog_database | 2 |
 | 2 | root | aws_iam_policy | 1 |

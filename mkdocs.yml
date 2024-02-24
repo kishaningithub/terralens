@@ -1,5 +1,13 @@
 site_name: Terralens
 repo_url: https://github.com/kishaningithub/terralens
+nav:
+  - index.md
+  - installation.md
+  - getting-started.md
+  - Views:
+    - views/index.md
+    - views/burn-down-list-detailed.md
+  - reference.md
 markdown_extensions:
   # Syntax highlighting of code blocks
   - pymdownx.highlight:

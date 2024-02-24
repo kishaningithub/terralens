@@ -40,11 +40,11 @@ func render(groupedBurnDownList map[burnDownOverviewData]int) string {
 			Mode: table.Asc,
 		},
 		{
-			Name: "Count",
+			Name: "No. of resources",
 			Mode: table.DscNumeric,
 		},
 	})
-	tableWriter.AppendHeader(table.Row{"Module", "Resource type", "Count"})
+	tableWriter.AppendHeader(table.Row{"Module", "Resource type", "No. of resources"})
 	for key, value := range groupedBurnDownList {
 		tableWriter.AppendRow(table.Row{key.ModuleName, key.ResourceType, value})
 	}

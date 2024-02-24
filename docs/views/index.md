@@ -10,12 +10,12 @@ terraform show -json | terralens -d burn_down_list
 
 It shows a burn down list in descending order of the "No. of resources"
 
-|   | Resource name                                      | No. of resources |
-|--:|----------------------------------------------------|-----------------:|
-| 1 | module.test_vpc                                    |               22 |
-| 2 | aws_s3_bucket                                      |                6 |
-| 3 | aws_secretsmanager_secret                          |                5 |
-| 4 | aws_instance                                       |                1 |
+|   | Resource name             | No. of resources |
+|--:|---------------------------|-----------------:|
+| 1 | module.test_vpc           |               22 |
+| 2 | aws_s3_bucket             |                6 |
+| 3 | aws_secretsmanager_secret |                5 |
+| 4 | aws_instance              |                1 |
 
 ## Computation logic
 

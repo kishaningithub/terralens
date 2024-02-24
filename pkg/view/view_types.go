@@ -19,7 +19,7 @@ func Render(viewType string, resources []parser.TerraformResource) (string, erro
 	case BurnDownListDetailed:
 		return burndowndetailed.BurnDownDetailedView(resources), nil
 	}
-	return "", fmt.Errorf("invalid view type %q", viewType)
+	return "", fmt.Errorf("invalid display type %q", viewType)
 }
 
 func SupportedViewTypes() []string {
