@@ -9,6 +9,11 @@
 - To build the project, run command `make build`.
 - To run only the tests, run command `make test`.
 
+## Viewing the documentation in local
+
+- Run `docker run --rm -it -p 8000:8000 -v ${PWD}:/docs squidfunk/mkdocs-material`
+- Navigate to http://0.0.0.0:8000/
+
 ## Upgrading dependencies
 
 - For golang, to upgrade the golang version in [go.mod](./go.mod) file.

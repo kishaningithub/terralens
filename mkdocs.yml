@@ -1,5 +1,10 @@
 site_name: Terralens
 repo_url: https://github.com/kishaningithub/terralens
+markdown_extensions:
+  # Syntax highlighting of code blocks
+  - pymdownx.highlight:
+      use_pygments: true
+  - pymdownx.superfences
 theme:
   name: material
   palette:
