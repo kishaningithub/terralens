@@ -1,4 +1,4 @@
-package tfstateviz
+package burndowndetailed
 
 import (
 	"github.com/jedib0t/go-pretty/v6/table"
@@ -6,20 +6,20 @@ import (
 	"strings"
 )
 
-type BurnDownOverviewData struct {
+type burnDownOverviewData struct {
 	ModuleName   string
 	ResourceType string
 }
 
-func BurnDownDetailed(resources []parser.TerraformResource) string {
-	var burnDownLst []BurnDownOverviewData
+func BurnDownDetailedView(resources []parser.TerraformResource) string {
+	var burnDownLst []burnDownOverviewData
 	for _, resource := range resources {
-		burnDownLst = append(burnDownLst, BurnDownOverviewData{
+		burnDownLst = append(burnDownLst, burnDownOverviewData{
 			ModuleName:   findModuleName(resource.Address),
 			ResourceType: resource.Type,
 		})
 	}
-	groupedBurnDownList := make(map[BurnDownOverviewData]int)
+	groupedBurnDownList := make(map[burnDownOverviewData]int)
 	for _, burnDownData := range burnDownLst {
 		_, exists := groupedBurnDownList[burnDownData]
 		if exists {
@@ -28,7 +28,12 @@ func BurnDownDetailed(resources []parser.TerraformResource) string {
 		}
 		groupedBurnDownList[burnDownData] = 1
 	}
+	return render(groupedBurnDownList)
+}
+
+func render(groupedBurnDownList map[burnDownOverviewData]int) string {
 	tableWriter := table.NewWriter()
+	tableWriter.SetAutoIndex(true)
 	tableWriter.SortBy([]table.SortBy{
 		{
 			Name: "Module",

@@ -1,14 +1,14 @@
-package tfstateviz_test
+package burndowndetailed_test
 
 import (
-	tfstateviz "github.com/kishaningithub/terralens/pkg"
 	"github.com/kishaningithub/terralens/pkg/parser"
+	"github.com/kishaningithub/terralens/pkg/view/burndowndetailed"
 	"github.com/stretchr/testify/require"
 	"strings"
 	"testing"
 )
 
-func TestBurnDownDetailed(t *testing.T) {
+func TestBurnDownDetailedView(t *testing.T) {
 	type args struct {
 		resources []parser.TerraformResource
 	}
@@ -56,19 +56,19 @@ func TestBurnDownDetailed(t *testing.T) {
 				},
 			},
 			want: strings.TrimSpace(`
-| Module | Resource type | Count |
-| --- | --- | ---:|
-| root | aws_glue_catalog_database | 2 |
-| root | aws_iam_policy | 1 |
-| test_mwaa | aws_mwaa_environment | 3 |
-| test_mwaa | aws_iam_policy | 1 |
-| vpc | aws_iam_role | 1 |
+| | Module | Resource type | Count |
+| ---:| --- | --- | ---:|
+| 1 | root | aws_glue_catalog_database | 2 |
+| 2 | root | aws_iam_policy | 1 |
+| 3 | test_mwaa | aws_mwaa_environment | 3 |
+| 4 | test_mwaa | aws_iam_policy | 1 |
+| 5 | vpc | aws_iam_role | 1 |
 `),
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := tfstateviz.BurnDownDetailed(tt.args.resources)
+			got := burndowndetailed.BurnDownDetailedView(tt.args.resources)
 			require.Equal(t, tt.want, got)
 		})
 	}

@@ -2,6 +2,7 @@ package tfstateviz
 
 import (
 	"github.com/kishaningithub/terralens/pkg/parser"
+	"github.com/kishaningithub/terralens/pkg/view"
 	"io"
 )
 
@@ -10,11 +11,9 @@ func ShowView(stateJsonReader io.Reader, viewType string) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	if viewType == ViewTypeBurnDownList {
-		return BurnDown(resources), nil
+	renderedView, err := view.Render(viewType, resources)
+	if err != nil {
+		return "", err
 	}
-	if viewType == ViewTypeBurnDownListDetailed {
-		return BurnDownDetailed(resources), nil
-	}
-	return "", nil
+	return renderedView, nil
 }

@@ -1,14 +1,14 @@
-package tfstateviz_test
+package burndown_test
 
 import (
-	tfstateviz "github.com/kishaningithub/terralens/pkg"
 	"github.com/kishaningithub/terralens/pkg/parser"
+	tfstateviz "github.com/kishaningithub/terralens/pkg/view/burndown"
 	"github.com/stretchr/testify/require"
 	"strings"
 	"testing"
 )
 
-func TestBurnDown(t *testing.T) {
+func TestBurnDownView(t *testing.T) {
 	type args struct {
 		resources []parser.TerraformResource
 	}
